@@ -2,11 +2,9 @@
 I'm doing the **Security Information** course, and this is the repository that I'm using to store my files. Feel free to use anything that can be useful to you.
 
 ## Classes
-<p style="text-align: right; opacity: .7;">
-    <sup>
-        ~~done~~ / ***doing*** / to do
-    </sup>
-</p>
+<sup>
+    ~~done~~ / ***doing*** / to do
+</sup>
 
  - ***Fundamentos de Redes de Computadores***
  - ***Algoritmos e Programação em C++***
