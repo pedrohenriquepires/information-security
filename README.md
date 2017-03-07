@@ -5,7 +5,7 @@ I'm doing the **Security Information** course, and this is the repository that I
 <sup>[ ~~done~~ / ***doing*** / to do ]</sup>
 
  - ***Fundamentos de Redes de Computadores*** .......................... ( [repository](https://github.com/pedrohenriquepires/information-security/tree/master/fundamentos-de-redes-de-computadores) )
- - ***Algoritmos e Programação em C++*** ...................................... (x [repository](https://github.com/pedrohenriquepires/information-security/tree/master/algoritmos-e-programacao-em-c%2B%2B) )
+ - ***Algoritmos e Programação em C++*** ...................................... ( [repository](https://github.com/pedrohenriquepires/information-security/tree/master/algoritmos-e-programacao-em-c%2B%2B) )
  - Introdução à Computação e suas Aplicações  
  - Matemática para Computação  
  - Inglês Técnico para Computação
