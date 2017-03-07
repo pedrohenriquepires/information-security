@@ -1,5 +1,5 @@
 # Information Security
-I'm doing the **Security Information** course, and this is the repository that I'm using to store my files. Feel free to use anything that can be useful to you.
+I'm doing the **Information Security** course, and this is the repository that I'm using to store my files. Feel free to use anything that can be useful to you.
 
 ## Classes
 <sup>[ ~~done~~ / ***doing*** / to do ]</sup>
