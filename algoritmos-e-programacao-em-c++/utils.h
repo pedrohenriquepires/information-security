@@ -16,6 +16,11 @@ void readChar(const char* label, char * arg) {
 	scanf("\n%c", arg);
 }
 
+void readString(const char* label, char arg[]) {
+	printf("%s: ", label);
+	gets(arg);
+}
+
 void readTime(const char* label, int * horas, int * minutos, int * segundos) {
 	printf("%s: ", label);
 	scanf("%d:%d:%d", horas, minutos, segundos);
