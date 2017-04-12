@@ -22,23 +22,6 @@ void readString(const char* label, char arg[]) {
 	scanf("\n%[^\n]s", arg);
 }
 
-void readTime(const char* label, int * horas, int * minutos, int * segundos) {
-	printf("%s ", label);
-	scanf("%d:%d:%d", horas, minutos, segundos);
-}
-
-void printArrayInt(const int size, int * array) {
-	for (int i = 0; i < size; i++) {
-		printf("%d\n", array[i]);
-	}
-}
-
-void printArrayDouble(const int size, double * array) {
-	for (int i = 0; i < size; i++) {
-		printf("%.2lf\n", array[i]);
-	}
-}
-
 void separator() {
 	printf("\n--------------------\n\n");
 }
