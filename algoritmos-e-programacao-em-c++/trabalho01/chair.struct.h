@@ -1,7 +1,7 @@
-#include "ocupante.struct.h"
 #include "stdbool.h"
+#include "occupant.struct.h"
 
 typedef struct Chair {
-	bool available;
+	bool reserved;
 	Occupant occupant;
 } Chair;

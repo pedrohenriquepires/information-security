@@ -23,7 +23,11 @@ void readString(const char* label, char arg[]) {
 }
 
 void separator() {
-	printf("\n--------------------\n\n");
+	printf("\n--------------------\n");
+}
+
+void space() {
+	printf("\n");
 }
 
 void repeatChar(char input , int count ) {
