@@ -70,7 +70,15 @@ void handleMenuChoice(int menuChoice, double ticketPrice, Chair chairs[rows][col
 			renderMap(chairs);
 
 			space();
-			readChar("Deseja voltar para o menu (S/N)?", &leave);
+
+			readInt("Informe a fileira: ", &row);
+			readInt("Informe a coluna: ", &column);
+
+			Chair chair = chairs[row][column];
+
+			if(chair.reserved) {
+				printf("")
+			} else {}
 
 			break;
 	}
@@ -96,8 +104,6 @@ void prePopulateChairs(Chair chairs[rows][columns]) {
 }
 
 void renderMap(Chair chairs[rows][columns]) {
-	chairs[4][6].reserved = true;
-
 	for(int row = -1; row < rows; row++) {
 		space();
 		for(int column = 0; column < columns; column++) {
