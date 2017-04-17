@@ -77,8 +77,10 @@ void handleMenuChoice(int menuChoice, double ticketPrice, Chair chairs[rows][col
 			Chair chair = chairs[row][column];
 
 			if(chair.reserved) {
-				printf("")
-			} else {}
+				printf("Esse assento já foi reservado.");
+			} else {
+				
+			}
 
 			break;
 	}
