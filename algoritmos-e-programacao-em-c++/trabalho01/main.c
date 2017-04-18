@@ -13,6 +13,7 @@ void menu(double ticketPrice, Chair chairs[rows][columns]);
 void prePopulateChairs(Chair chairs[rows][columns]);
 void renderMap(Chair chairs[rows][columns]);
 void renderMenu();
+Chair reserveChair();
 void setCineProperties(double *ticketPrice);
 
 int main() {
@@ -32,8 +33,7 @@ int main() {
 
 void handleMenuChoice(int menuChoice, double ticketPrice, Chair chairs[rows][columns]) {
 	char leave;
-	int row;
-	int column;
+	int row, column, chairsLength;
 
 	clear();
 
@@ -43,13 +43,20 @@ void handleMenuChoice(int menuChoice, double ticketPrice, Chair chairs[rows][col
 	}
 
 	switch (menuChoice) {
+		Chair chair;
+
 		case AVAILABLE_CHAIR:
-			readInt("Informe a fileira: ", &row);
-			readInt("Informe a coluna: ", &column);
+			renderMap(chairs);
+
 			separator();
 			space();
 
-			Chair chair = chairs[row][column];
+			readInt("Informe a fileira:", &row);
+			readInt("Informe a coluna:", &column);
+			separator();
+			space();
+
+			chair = chairs[row - 1][column - 1];
 
 			if(!chair.reserved) {
 				printf("O assento está livre!");
@@ -69,17 +76,45 @@ void handleMenuChoice(int menuChoice, double ticketPrice, Chair chairs[rows][col
 		case CHAIR_RESERVE:
 			renderMap(chairs);
 
+			separator();
 			space();
 
-			readInt("Informe a fileira: ", &row);
-			readInt("Informe a coluna: ", &column);
+			readInt("Informe a fileira:", &row);
+			readInt("Informe a coluna:", &column);
+			readInt("Informe o número de cadeiras:", &chairsLength);
 
-			Chair chair = chairs[row][column];
+			int chairsColumns[chairsLength];
+			int counter = 0;
 
-			if(chair.reserved) {
-				printf("Esse assento já foi reservado.");
-			} else {
-				
+			for(int c = column - 1; c < column + (chairsLength - 1); c++) {
+				if(column + (chairsLength - 1) > columns) {
+					c = 0;
+					column = 1;
+					row++;
+				}
+
+				if(chairs[row - 1][c].reserved) {
+					column = c + 2;
+					counter = 0;
+				} else {
+					chairsColumns[counter] = c;
+					counter++;
+				}
+
+				space();
+			}
+
+			for(int c = 0; c < chairsLength; c++) {
+				clear();
+
+				printf("Assento [%d - %d]", row, chairsColumns[c] + 1);
+				space();
+				separator();
+				space();
+
+				chairs[row - 1][chairsColumns[c]] = reserveChair();
+
+				separator();
 			}
 
 			break;
@@ -89,10 +124,9 @@ void handleMenuChoice(int menuChoice, double ticketPrice, Chair chairs[rows][col
 void menu(double ticketPrice, Chair chairs[rows][columns]) {
 	int menuChoice = 0;
 
-
 	do {
 		renderMenu();
-		readInt("Escolha uma opção: ", &menuChoice);
+		readInt("Escolha uma opção:", &menuChoice);
 		handleMenuChoice(menuChoice, ticketPrice, chairs);
 	} while(menuChoice != EXIT);
 }
@@ -131,15 +165,28 @@ void renderMap(Chair chairs[rows][columns]) {
 void renderMenu() {
 	clear();
 
+	printf("	Menu");
 	separator();
-	printf("	Menu\n");
-	separator();
+	space();
 
 	printf("1. Consulta de disponibilidade de assento.\n");
 	printf("2. Consulta de disponibilidade de assentos conjuntos.\n");
 	printf("3. Reserva de assentos.\n");
 	printf("4. Liberação de assentos.\n");
 	printf("5. Sair.\n");
+	separator();
+}
+
+Chair reserveChair() {
+	Chair chair;
+
+	readString("Informe o nome do ocupante:", chair.occupant.name);
+	readChar("Informe o sexo do ocupante (M/F):", &chair.occupant.gender);
+	readInt("Informe a idade do ocupante:", &chair.occupant.age);
+
+	chair.reserved = true;
+
+	return chair;
 }
 
 void setCineProperties(double *ticketPrice) {
