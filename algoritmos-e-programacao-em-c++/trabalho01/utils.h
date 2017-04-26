@@ -36,6 +36,12 @@ void repeatChar(char input , int count ) {
     }
 }
 
+void blockSection() {
+	printf("Pressione <ENTER> para voltar ao menu ");
+	getchar();
+	getchar();
+}
+
 void clear() {
 	system("@cls||clear");
 }
