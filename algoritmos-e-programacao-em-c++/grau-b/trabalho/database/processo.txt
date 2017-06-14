@@ -1,0 +1,11 @@
+NomeProcesso,Tempo(min)
+Injecao,8
+Extrusao,13
+Corte,16
+Soldagem,38
+Perfuracao,15
+Lixacao,22
+Polimento,27
+Pintura,31
+Montagem,74
+Adesivagem,3

@@ -1,0 +1,5 @@
+Monociclo,{Aro,1,Raio,20,Cubo,1,Pneu,1,Rolamento,2,Pe de vela,1,Pedal,2,Banco,1,Correia,50,Coroa,1,Pinha,1,Parafuso,30,Porca,6,Arruela,12,Tinta,100,Verniz,20},{Injecao,Corte,Soldagem,Lixacao,Pintura,Polimento,Montagem}
+Bicicleta adulto,{Aro,2,Raio,40,Cubo,2,Pneu,2,Rolamento,4,Quadro,1,Guidom,1,Manete,2,Pe de vela,1,Pedal,2,Banco,1,Correia,65,Coroa,3,Pinha,1,Cambio,2,Parafuso,40,Porca,10,Arruela,18,Cabo de aco,350,Tinta,180,Verniz,40},{Corte,Soldagem,Perfuracao,Lixacao,Pintura,Polimento,Montagem,Adesivagem}
+Bicicleta Infantil,{Aro,2,Pneu,2,Rolamento,3,Quadro,1,Guidom,1,Manete,2,Pe de vela,1,Pedal,2,Banco,1,Correia,45,Coroa,1,Pinha,1,Parafuso,5,Porca,10,Arruela,6,Cabo de aco,80,Tinta,70},{Corte,Soldagem,Lixacao,Pintura,Polimento,Montagem,Adesivagem}
+Triciclo Infantil,{Aro,3,Pneu,3,Guidom,1,Pe de vela,1,Pedal,2,Banco,1,Parafuso,8,Porca,2,Arruela,2,Tinta,20},{Injecao,Extrusao,Pintura,Montagem,Adesivagem}
+Quadricilco,{Aro,4,Raio,48,Cubo,4,Pneu,4,Rolamento,5,Quadro,1,Guidom,1,Manete,2,Pe de vela,1,Pedal,1,Banco,2,Correia,120,Coroa,1,Pinha,1,Parafuso,32,Porca,8,Arruela,8,Cabo de aco,270,Tinta,160,Verniz,40},{Soldagem,Perfuracao,Pintura,Montagem,Adesivagem}

@@ -1,0 +1,22 @@
+NomeInsumo,Unidade,Quantidade
+Aro,un,26
+Raio,un,46
+Cubo,un,98
+Pneu,un,41
+Rolamento,un,7
+Quadro,un,30
+Guidom,un,80
+Manete,un,46
+Pe de vela,un,67
+Pedal,un,73
+Banco,un,38
+Correia,cm,214
+Coroa,un,5
+Pinha,un,58
+Cambio,un,66
+Parafuso,un,21
+Porca,un,59
+Arruela,un,68
+Cabo de aco,cm,321
+Tinta,ml,3126
+Verniz,ml,2591
