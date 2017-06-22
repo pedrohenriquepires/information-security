@@ -15,8 +15,38 @@ public:
         return this->insumos;
     }
 
+    void clear() {
+        this->insumos.clear();
+    }
+
+    Insumo* getInsumo(int id) {
+        return &insumos[id];
+    }
+
     void adicionaInsumo(Insumo insumo){
         insumos.push_back(insumo);
+    }
+
+    void retiraEstoque(string nome, int quantidade) {
+        int counter = 0;
+
+        for(auto value : this->insumos) {
+            if(nome == value.getNome()) {
+                this->insumos[counter].retiraEstoque(quantidade);
+            } else {
+                counter++;
+            }
+        }
+    }
+
+    string write() {
+        string str;
+
+        for(auto value: this->insumos) {
+            str += value.getNome() + "," + value.getUnidade() + "," + to_string(value.getQtEstoque()) + "\n";
+        }
+
+        return str;
     }
 
     void parse(vector<vector<string>> str)
@@ -37,7 +67,7 @@ public:
                         insumo.setUnidade(*col);
                         break;
                     case 2:
-                        insumo.setQtEstoque(1);
+                        insumo.setQtEstoque(stoi(*col));
                         break;
                 }
 

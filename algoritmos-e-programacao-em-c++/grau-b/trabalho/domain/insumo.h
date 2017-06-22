@@ -13,13 +13,13 @@ public:
     Insumo(){}
 
     string toString(){
-        return this->nome + ',' + this->unidade + ',' + to_string(this->qtEstoque);
+        return "Nome: " + this->nome + " - Unidade: " + this->unidade + " - Quantidade: " + to_string(this->qtEstoque);
     }
     void adicionaEstoque(int val){
-        this->qtEstoque + val;
+        this->qtEstoque += val;
     }
     void retiraEstoque(int val){
-        this->qtEstoque - val;
+        this->qtEstoque -= val;
     }
 
     void setNome(string nome) {

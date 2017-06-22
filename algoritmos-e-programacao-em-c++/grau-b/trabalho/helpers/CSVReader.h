@@ -11,6 +11,16 @@ class CSVReader {
     private:
         fstream fs;
 
+        void writeFile(string filePath, string content) {
+            fs.open(filePath, fstream::out | fstream::trunc);
+
+            if(fs.is_open()) {
+                fs << content << endl;
+            }
+
+            fs.close();
+        }
+
         vector<vector<string>> handleFile(string filePath) {
             string str, resultStr;
             vector<vector<string>> resultVector;
@@ -20,7 +30,10 @@ class CSVReader {
             if(fs.is_open()) {
                 while(!fs.eof()) {
                     getline(fs, str);
-                    resultVector.push_back(buildLine(str));
+
+                    if(str != "") {
+                        resultVector.push_back(buildLine(str));
+                    }
                 }
             }
 
@@ -81,5 +94,10 @@ class CSVReader {
             vector<vector<string>> resultVector = this->handleFile(filePath);
 
             object->parse(resultVector);
+        }
+
+        template <class T>
+        void objectWriter(T object, string filePath) {
+            this->writeFile(filePath, object->write());
         }
     };

@@ -26,7 +26,9 @@ public:
 
         for (row = str.begin(); row != str.end(); row++) {
             Produto produto;
-            int colCount = 0;
+            int colCount = 0, insumoCount;
+            vector<string> vectorStr;
+            Insumo insumo;
 
             for (col = row->begin(); col != row->end(); col++) {
                 switch (colCount) {
@@ -34,11 +36,10 @@ public:
                         produto.setNome(*col);
                         break;
                     case 1:
-                        vector<string> insumosStr = split(*col, '|');
-                        int insumoCount = 0;
+                        vectorStr = split(*col, '|');
+                        insumoCount = 0;
 
-                        for (auto i = insumosStr.begin(); i != insumosStr.end(); i++ ) {
-                            Insumo insumo;
+                        for (auto i = vectorStr.begin(); i != vectorStr.end(); i++ ) {
 
                             if(insumoCount % 2 == 0) {
                                 insumo.setNome(*i);
@@ -47,6 +48,14 @@ public:
                             }
 
                             insumoCount++;
+                        }
+
+                        break;
+                    case 2:
+                        vectorStr = split(*col, '|');
+
+                        for (auto i = vectorStr.begin(); i != vectorStr.end(); i++ ) {
+                            produto.adicionaProcesso(*i);
                         }
 
                         break;

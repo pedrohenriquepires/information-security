@@ -14,17 +14,25 @@ private:
 public:
     Produto(){}
 
+    string toString() {
+        return "Nome: " + this->nome;
+    }
+
     void adicionaInsumo(Insumo insumo, int quantidade) {
         this->insumos.push_back(new insumoProduto(insumo, quantidade));
     }
 
-    void adicionaProcesso(Processo *processo) {
+    void adicionaProcesso(string nome) {
+        Processo *processo = new Processo();
+        processo->setNome(nome);
+
         this->processos.push_back(processo);
     }
 
     void setNome(string nome) {
         this->nome = nome;
     }
+
     string getNome() {
         return this->nome;
     }
@@ -33,21 +41,21 @@ public:
         return this->insumos;
     }
 
+    vector <Processo*> getProcessos() {
+        return this->processos;
+    }
+
     void listaInsumos() {
         for(auto value: this->insumos) {
-            cout << value->getInsumo().toString();
+            cout << value->toString() << endl;
         }
     }
 
-    // int tempoProcessos(){
-    //     int tempoTotal = 0;
-    //     for (vector<Processo*>::iterator it=processos.begin(); it != processos.end(); it++) {
-    //         tempoTotal += (*it)->tempo;
-    //     }
-    // }
-    // bool possuiinsumoEmEstoque(){
-    //     for (vector<insumoProduto*>::iterator it = insumos.begin((); it!= insumos.end(); i++) {
-    //         return (*it)->insumo->qtEstoque > 0;
-    //     }
-    // }
+	void listarProcessos(Processos *processos) {
+        for(auto value: this->processos) {
+            Processo processo = processos->getProcessoByNome(value->getNome());
+
+            cout << "Nome: " << processo.getNome() << " - Tempo: " << to_string(processo.getTempo()) << " minuto(s)" << endl;
+        }
+    }
 };

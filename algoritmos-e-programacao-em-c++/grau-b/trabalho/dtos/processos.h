@@ -2,6 +2,9 @@
 #include <string>
 #include <fstream>
 #include <vector>
+#include <cstring>
+#include <regex>
+
 
 using namespace std;
 
@@ -19,6 +22,23 @@ public:
         processos.push_back(processo);
     }
 
+    Processo getProcessoByNome(string nome) {
+        Processo processo;
+        regex expression ("\\W");
+
+        for(auto value: this->processos) {
+            nome = regex_replace(nome, expression, "");
+
+            // cout << value.getNome() << "(" << value.getNome().length() << ")" << " - " << nome  << "(" << nome.length() << ")" << endl;
+
+            if(strcmp(value.getNome().c_str(), nome.c_str()) == 0) {
+                processo = value;
+            }
+        }
+
+        return processo;
+    }
+
     void parse(vector<vector<string>> str)
     {
         vector< vector<string> >::iterator row;
@@ -34,7 +54,7 @@ public:
                         processo.setNome(*col);
                         break;
                     case 1:
-                        processo.setTempo(1);
+                        processo.setTempo(stoi(*col));
                         break;
                 }
 

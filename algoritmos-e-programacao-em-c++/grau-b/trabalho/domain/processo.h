@@ -12,7 +12,7 @@ public:
     Processo(){}
 
     string toString(){
-        return this->nome + ',' + to_string(this->tempo);
+        return "Nome: " + this->nome + " - Tempo: " + to_string(this->tempo) + " minuto(s)";
     }
 
     void setNome(string nome) {

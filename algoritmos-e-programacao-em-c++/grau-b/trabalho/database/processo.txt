@@ -1,4 +1,3 @@
-NomeProcesso,Tempo(min)
 Injecao,8
 Extrusao,13
 Corte,16

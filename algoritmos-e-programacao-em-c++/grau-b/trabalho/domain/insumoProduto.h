@@ -21,4 +21,8 @@ public:
     int getQuantidade () {
         return this->quantidade;
     }
+
+    string toString() {
+        return "Nome: " + this->insumo.getNome() + " - Quantidade: " + to_string(this->quantidade);
+    }
 };
